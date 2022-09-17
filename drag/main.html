@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Example 1</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-web-portals@1.0.1/dist/aframe-web-portals.umd.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      
+      <!--Camera-->
+      <a-entity
+        id="player"
+        position="0 1.6 0"
+        camera
+        wasd-controls="acceleration: 15;"
+        look-controls="pointerLockEnabled: false"
+      >
+        <a-cursor position="0 0 -.05" scale=".04 .04 1"></a-cursor>
+        <!--For Collision Detection-->
+       
+      </a-entity>
+
+      <!--Portal-->
+      <a-entity 
+        position="-6 0 -10"
+        web-portal="url:./dragon.html; text:DRAGON;"
+      ></a-entity>
+      <a-entity
+        position="0 0 -6"
+        web-portal="url:./index.html; text:HUMAN;"
+      ></a-entity>
+      <a-entity
+      position="6 0 -10"
+      web-portal="url:./index4.html; text:DOG;"
+    ></a-entity>
+
+      <!--Environment-->
+
+      <a-assets>
+        <img id="sky" src="img\bg2.jpg">
+      </a-assets>
+      <a-sky src="#sky"></a-sky>
+     
+    </a-scene>
+  </body>
+</html>
